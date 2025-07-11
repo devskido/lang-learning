@@ -1,0 +1,92 @@
+/* 번역 모드 토글 UI 스타일 */
+.translation-mode-container {
+  display: flex;
+  gap: 4px;
+  padding: 8px;
+  background-color: var(--popup-background-color, #f8f9fa);
+  border-radius: 20px;
+  margin: 8px;
+  justify-content: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.translation-mode-button {
+  width: 36px;
+  height: 36px;
+  border: none;
+  background-color: transparent;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  position: relative;
+  color: var(--popup-text-color, #333);
+}
+
+.translation-mode-button:hover {
+  background-color: var(--popup-item-hover-background-color, rgba(0, 0, 0, 0.05));
+  transform: scale(1.05);
+}
+
+.translation-mode-button.active {
+  background-color: var(--popup-primary-color, #4A90E2);
+  color: white;
+  box-shadow: 0 2px 6px rgba(74, 144, 226, 0.3);
+}
+
+.translation-mode-button svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* 툴팁 스타일 */
+.translation-mode-button::after {
+  content: attr(title);
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%) scale(0);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  opacity: 0;
+  transition: all 0.2s ease;
+  pointer-events: none;
+  z-index: 1000;
+}
+
+.translation-mode-button:hover::after {
+  transform: translateX(-50%) scale(1);
+  opacity: 1;
+}
+
+/* 다크 모드 지원 */
+@media (prefers-color-scheme: dark) {
+  .translation-mode-container {
+    background-color: var(--popup-background-color, #2b2b2b);
+  }
+  
+  .translation-mode-button {
+    color: var(--popup-text-color, #e0e0e0);
+  }
+  
+  .translation-mode-button:hover {
+    background-color: var(--popup-item-hover-background-color, rgba(255, 255, 255, 0.1));
+  }
+}
+
+/* 애니메이션 */
+@keyframes modeSwitch {
+  0% { transform: scale(1) rotate(0deg); }
+  50% { transform: scale(1.2) rotate(180deg); }
+  100% { transform: scale(1) rotate(360deg); }
+}
+
+.translation-mode-button.switching {
+  animation: modeSwitch 0.5s ease;
+}
