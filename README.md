@@ -6,7 +6,7 @@
 
 ```
 lang-learning/
-├── bpoadfkcbjbfhfodiogcnhhhpibjhbnh/  # Chrome 확장 프로그램
+├── Spongify/                           # Chrome 확장 프로그램
 │   ├── manifest.json
 │   ├── popup.html
 │   ├── background.js
@@ -32,7 +32,7 @@ lang-learning/
 1. Chrome 브라우저에서 `chrome://extensions/` 접속
 2. 우측 상단 "개발자 모드" 활성화
 3. "압축해제된 확장 프로그램을 로드합니다" 클릭
-4. `bpoadfkcbjbfhfodiogcnhhhpibjhbnh` 폴더 선택
+4. `Spongify` 폴더 선택
 
 ## 웹사이트
 
