@@ -1,4 +1,4 @@
-# Lang Learning - 언어 학습 도구
+# Spongify - 언어 학습 도구
 
 언어 학습을 위한 Chrome 확장 프로그램과 웹사이트 프로젝트입니다.
 
